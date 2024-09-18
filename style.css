@@ -31,6 +31,7 @@ header {
     color: #000000;
 }
 
+/* Navigasi */
 nav ul {
     display: flex;
     list-style: none;
@@ -52,9 +53,29 @@ nav ul li a:hover {
     color: #A8D1E7;
 }
 
+/* Tombol menu untuk mobile */
+.menu-toggle {
+    display: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    background-color: #A8D1E7;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav ul.show {
+    display: block;
+    flex-direction: column;
+    background-color: #EB8DB5;
+    padding: 10px;
+    gap: 10px;
+}
+
 /* Main content styling */
 main {
-    padding-top: 30px; /* Adjust for fixed header */
+    padding-top: 80px; /* Adjust for fixed header */
 }
 
 /* Home Section Styling */
@@ -127,8 +148,6 @@ button:hover {
     height: 100%;
     transform-origin: center;
     transform-style: preserve-3d;
-    -webkit-box-reflect: below 0px
-    linear-gradient(transparent, transparent, #0004);
     transform: rotateY(calc(var(--i)*45deg)) translateZ(200px);
 }
 
@@ -201,4 +220,53 @@ footer {
     color: #000000;
     font-weight: 700;
     margin-top: 50px;
+}
+
+/* Media Query untuk Mobile */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none; /* Sembunyikan menu untuk mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: #EB8DB5;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin-bottom: 15px;
+    }
+
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    .carousel {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .menu-item {
+        width: 45%; /* Ubah lebar agar 2 item per baris */
+    }
+
+    section {
+        padding: 30px 15px;
+    }
 }
